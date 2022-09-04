@@ -1,0 +1,109 @@
+<html>
+
+<head>
+
+<title>JavaScript Exmaple</title>
+
+
+<script type= "text/javascript" >
+var xmlHttpRequest;
+function createXmlHttpRequest()
+{
+	if(window.ActiveXObject)
+	{
+		return new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	else if(window.XMLHttpRequest)
+	{
+ 		return new XMLHttpRequest();
+	}
+}
+
+function getInfo1()
+{
+	var url = "/getinfo";
+	xmlHttpRequest = createXmlHttpRequest();
+	xmlHttpRequest.onreadystatechange = showResult1;
+	xmlHttpRequest.open("GET",url,true);
+	xmlHttpRequest.send(null); // HTTP GET, http://www.gwdemo.net:8000/getinfo
+}
+function showResult1()
+{
+	if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200)
+	{
+		var jsonObj = JSON.parse(xmlHttpRequest.responseText)
+	    x=document.getElementById("myDiv1");
+		x.innerHTML=jsonObj.name;
+		x=document.getElementById("myDiv2");
+		x.innerHTML=jsonObj.age;
+		x=document.getElementById("myDiv3");
+		x.innerHTML=jsonObj.height;
+		x=document.getElementById("myDiv4");
+		x.innerHTML=jsonObj.weight;
+	}
+}
+
+function getInfo2()
+{
+    var fn = document.getElementById('fn'); // read what was typed before clicking
+    var ln = document.getElementById('ln');
+    var data = 'first_name='+fn.value+'&last_name='+ln.value; // dictionary like structure, default
+	var url = "/names"; // current host url/names
+	xmlHttpRequest = createXmlHttpRequest();
+	xmlHttpRequest.onreadystatechange = showResult2; // prepare for call back
+	xmlHttpRequest.open("POST",url,true);
+	xmlHttpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	xmlHttpRequest.send(data); // HTTP POST, http://www.gwdemo.net:8000/names
+}
+function showResult2()
+{
+	if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200)
+	{
+		x=document.getElementById("myDiv5");
+		x.innerHTML=xmlHttpRequest.responseText; // we can remove everything and only keep the received data, but we only updated the received data box here
+	}
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Asynchronous JavaScript and XML</h1>
+
+<form action="/names" method="POST">   <!╌  http://www.gwdemo.net:8000/names, post ╌>
+<l>First Name: </l> <BR>
+<input type="text" name="first_name" value="fname"> <BR>
+<l>Last Name: </l> <BR>
+<input type="text" name="last_name" value="lname"> <BR>
+<input type="submit" value="Regular Post"> <BR>
+</form>
+<BR>
+
+<l>Whiteboard 1</l>
+<div id="myDiv1" style="border: 1px solid green;">the result is:</div>
+<l>Whiteboard 2</l>
+<div id="myDiv2" style="border: 1px solid green;">the result is:</div>
+<l>Whiteboard 3</l>
+<div id="myDiv3" style="border: 1px solid green;">the result is:</div>
+<l>Whiteboard 4</l>
+<div id="myDiv4" style="border: 1px solid green;">the result is:</div>
+<input type = "button" value = "AJAX Request, Get - getInfo1" onclick = "getInfo1()" />
+                                       <!╌  http://www.gwdemo.net:8000/getinfo, get ╌>
+
+<BR>
+<BR>
+
+
+<input type="text" id="fn" value="firstn">
+<input type="text" id="ln" value="lastn">
+<div id="myDiv5" style="border: 1px solid green;">the result is:</div>
+<input type = "button" value = "AJAX Request, Post - getInfo2" onclick = "getInfo2()" />
+                                       <!╌  http://www.gwdemo.net:8000/names, post ╌>
+<BR>
+<BR>
+
+<img src="/static/mountain.jpg" width="300" height="200" />
+
+</body>
+</html>
