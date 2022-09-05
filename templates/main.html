@@ -48,7 +48,7 @@ function getInfo2()
     var fn = document.getElementById('fn');
     var ln = document.getElementById('ln');
     var data = 'first_name='+fn.value+'&last_name='+ln.value;
-	var url = "/names"; // current host url/names
+	var url = "/names";
 	xmlHttpRequest = createXmlHttpRequest();
 	xmlHttpRequest.onreadystatechange = showResult2;
 	xmlHttpRequest.open("POST",url,true);
