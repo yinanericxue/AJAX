@@ -17,7 +17,8 @@ def getinfo():
 
 @app.route('/names', methods=['POST'])
 def names():
-    return "This is " + request.form.get('first_name') + " " + request.form.get('last_name') + str(random.randint(0,10))
+    return "Logged in as " + request.form.get('first_name') + " " + request.form.get('last_name') + ". User ID assigned: " + str(random.randint(100000,999999))
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, threaded=True)
