@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, g, redirect, url_for
 import json
-import time
+import  time
 import random
 
 app = Flask(__name__)
@@ -11,8 +11,8 @@ def index():
 
 @app.route('/getinfo', methods=['GET'])
 def getinfo():
-    name = "Eric" + str(random.randint(0,10))
-    info = {'name':name,'age':20,'height':185,'weight':95}
+    name = "Eric" + str(random.randint(100000,999999))
+    info = {'name':name,'age':20,'height':185,'weight':95 }
     return json.dumps(info)
 
 @app.route('/names', methods=['POST'])
