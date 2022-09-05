@@ -25,7 +25,7 @@ function getInfo1()
 	xmlHttpRequest = createXmlHttpRequest();
 	xmlHttpRequest.onreadystatechange = showResult1;
 	xmlHttpRequest.open("GET",url,true);
-	xmlHttpRequest.send(null); // HTTP GET, http://www.gwdemo.net:8000/getinfo
+	xmlHttpRequest.send(null);
 }
 function showResult1()
 {
@@ -45,22 +45,22 @@ function showResult1()
 
 function getInfo2()
 {
-    var fn = document.getElementById('fn'); // read what was typed before clicking
+    var fn = document.getElementById('fn');
     var ln = document.getElementById('ln');
-    var data = 'first_name='+fn.value+'&last_name='+ln.value; // dictionary like structure, default
+    var data = 'first_name='+fn.value+'&last_name='+ln.value;
 	var url = "/names"; // current host url/names
 	xmlHttpRequest = createXmlHttpRequest();
-	xmlHttpRequest.onreadystatechange = showResult2; // prepare for call back
+	xmlHttpRequest.onreadystatechange = showResult2;
 	xmlHttpRequest.open("POST",url,true);
 	xmlHttpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-	xmlHttpRequest.send(data); // HTTP POST, http://www.gwdemo.net:8000/names
+	xmlHttpRequest.send(data);
 }
 function showResult2()
 {
 	if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200)
 	{
 		x=document.getElementById("myDiv5");
-		x.innerHTML=xmlHttpRequest.responseText; // we can remove everything and only keep the received data, but we only updated the received data box here
+		x.innerHTML=xmlHttpRequest.responseText;
 	}
 }
 </script>
@@ -103,7 +103,7 @@ function showResult2()
 <BR>
 <BR>
 
-<img src="/static/mountain.jpg" width="300" height="200" />
+<img src="/static/ericxue.jpg" width="300" height="200" />
 
 </body>
 </html>
