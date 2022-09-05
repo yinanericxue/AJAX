@@ -12,13 +12,12 @@ def index():
 @app.route('/getinfo', methods=['GET'])
 def getinfo():
     name = "Eric" + str(random.randint(0,10))
-    info = {'name':name,'age':20,'height':185,'weight':215 }
+    info = {'name':name,'age':20,'height':185,'weight':95}
     return json.dumps(info)
 
 @app.route('/names', methods=['POST'])
 def names():
     return "Name: " + request.form.get('first_name') + " " + request.form.get('last_name') + " // Username: " + request.form.get('Username') + " // User ID assigned: " + str(random.randint(100000,999999))
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, threaded=True)
