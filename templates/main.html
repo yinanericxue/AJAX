@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -7,6 +8,7 @@
 
 <script type= "text/javascript" >
 var xmlHttpRequest;
+	
 function createXmlHttpRequest()
 {
 	if(window.ActiveXObject)
@@ -27,6 +29,7 @@ function getInfo1()
 	xmlHttpRequest.open("GET",url,true);
 	xmlHttpRequest.send(null);
 }
+	
 function showResult1()
 {
 	if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200)
@@ -47,14 +50,16 @@ function getInfo2()
 {
     var fn = document.getElementById('fn');
     var ln = document.getElementById('ln');
-    var data = 'first_name='+fn.value+'&last_name='+ln.value;
-	var url = "/names";
+    var username = document.getElementById('username');
+    var data = 'first_name='+fn.value+'&last_name='+ln.value+'&Username='+username.value;
+	var url = "/names"; // current host url/names
 	xmlHttpRequest = createXmlHttpRequest();
 	xmlHttpRequest.onreadystatechange = showResult2;
 	xmlHttpRequest.open("POST",url,true);
 	xmlHttpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 	xmlHttpRequest.send(data);
 }
+	
 function showResult2()
 {
 	if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200)
@@ -63,6 +68,7 @@ function showResult2()
 		x.innerHTML=xmlHttpRequest.responseText;
 	}
 }
+	
 </script>
 
 </head>
@@ -70,7 +76,7 @@ function showResult2()
 <body>
 
 <h1>Asynchronous JavaScript and XML (AJAX)</h1>
-
+<h2>Regular Post:</h2>
 <form action="/names" method="POST">   <!╌  http://www.gwdemo.net:8000/names, post ╌>
 <l>First Name: </l> <BR>
 <input type="text" name="first_name" value=""> <BR>
@@ -78,10 +84,10 @@ function showResult2()
 <input type="text" name="last_name" value=""> <BR>
 <l>Username: </l> <BR>
 <input type="text" name="Username" value=""> <BR>
-<input type="submit" value="Regular Post"> <BR>
+<input type="submit" value="submit"> <BR>
 </form>
 <BR>
-
+<h2>AJAX Request, Get - getInfo1</h2>
 <l>User ID</l>
 <div id="myDiv1" style="border: 1px solid green;">the result is:</div>
 <l>Age</l>
@@ -90,22 +96,24 @@ function showResult2()
 <div id="myDiv3" style="border: 1px solid green;">the result is:</div>
 <l>Weight (kg)</l>
 <div id="myDiv4" style="border: 1px solid green;">the result is:</div>
-<input type = "button" value = "AJAX Request, Get - getInfo1" onclick = "getInfo1()" />
+<input type = "button" value = "submit" onclick = "getInfo1()" />
                                        <!╌  http://www.gwdemo.net:8000/getinfo, get ╌>
-
 <BR>
 <BR>
-
-
-<input type="text" id="fn" value="firstn">
-<input type="text" id="ln" value="lastn">
+<BR>
+<h2>AJAX Request, Post - getInfo2</h2>
+<l>First Name: </l>
+<input type="text" id="fn" value="">
+<l>Last Name : </l>
+<input type="text" id="ln" value="">
+<l>Username: </l>
+<input type="text" id="username" value="">
 <div id="myDiv5" style="border: 1px solid green;">the result is:</div>
-<input type = "button" value = "AJAX Request, Post - getInfo2" onclick = "getInfo2()" />
+<input type = "button" value = "submit" onclick = "getInfo2()" />
                                        <!╌  http://www.gwdemo.net:8000/names, post ╌>
 <BR>
 <BR>
-
-<img src="/static/ericxue.jpg" width="300" height="200" />
+<img src="/static/mountain.jpg" width="300" height="200" />
 
 </body>
 </html>
