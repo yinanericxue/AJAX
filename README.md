@@ -1,4 +1,4 @@
-# AJAX!
+# AJAX
 ## In this project, I experimented with AJAX, which allows web applications to exchange data with a server asynchronously without interfering with the display and behaviour of the existing page. In my website, there are three options: 1) regular post, which takes the user to another page to view their submitted information in an organized line, 2) get with AJAX, which lets the user view information stored on the server asynchronously, and 3) post with AJAX, which does the exact same thing as regular post, but this time loading the organized line directly on the existing page (website root).
 
 ![Screen Shot 2022-09-05 at 1 11 01 AM](https://user-images.githubusercontent.com/102645083/188402273-f9badd75-89e1-4bb9-a5e1-d681309e8569.png)
