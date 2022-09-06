@@ -1,4 +1,5 @@
 # AJAX!
+In this project, I experimented with AJAX, which allows web applications to exchange data with a server asynchronously without interfering with the display and behaviour of the existing page.
 ![Screen Shot 2022-09-05 at 1 11 01 AM](https://user-images.githubusercontent.com/102645083/188402273-f9badd75-89e1-4bb9-a5e1-d681309e8569.png)
 
 ![Screen Shot 2022-09-05 at 1 11 21 AM](https://user-images.githubusercontent.com/102645083/188402290-d3b58611-d71a-4366-84fc-39249c7e5207.png)
