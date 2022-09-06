@@ -3,7 +3,7 @@
 
 ![Screen Shot 2022-09-05 at 1 11 01 AM](https://user-images.githubusercontent.com/102645083/188402273-f9badd75-89e1-4bb9-a5e1-d681309e8569.png)
 
-
+# When the browser sends a request (Get/Post/Update/Delete, which is by a TCP connection, and triggered by URL, hyperlink, or Form Submit) to an URL, it will update the whole page based on the response.
 ![Screen Shot 2022-09-05 at 1 11 21 AM](https://user-images.githubusercontent.com/102645083/188402290-d3b58611-d71a-4366-84fc-39249c7e5207.png)
 
 ![Screen Shot 2022-09-05 at 1 11 31 AM](https://user-images.githubusercontent.com/102645083/188402305-183f0fb2-34c4-484b-b486-37df3f904cef.png)
