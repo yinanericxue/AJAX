@@ -10,8 +10,6 @@
 
 ## When the XMLHttpRequest object sends a request (Get/Post/Update/Delete, which is by a TCP connection, and triggered by the JavaScript onclick) to an URL, it will update part or the entirety of the page based on the response by using the callback functions.
 
-![image](https://user-images.githubusercontent.com/102645083/188529620-5c8f998f-febe-4437-8c2c-e525baacef38.png)
-
 ![Screen Shot 2022-09-05 at 1 11 45 AM](https://user-images.githubusercontent.com/102645083/188402328-5cd528fb-62b3-4f92-b8a4-1ee7cef091e3.png)
 
 ![Screen Shot 2022-09-05 at 1 12 05 AM](https://user-images.githubusercontent.com/102645083/188402505-4feb386e-d3cf-4b9f-99a9-f504df003fad.png)
